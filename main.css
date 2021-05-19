@@ -1,0 +1,101 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;700&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background: linear-gradient(#e66465, #9198e5);
+}
+
+.animated-bg{
+    animation: animate-bg-color 35s ease infinite;
+}
+
+@keyframes animate-bg-color {
+    0% {
+      background-color: hsl(0, 0%, 0%);
+    }
+  
+    25% {
+      background-color: hsl(240, 100%, 50%);
+    }
+  
+    50% {
+      background-color: hsl(0, 100%, 50%);
+    }
+  
+    75% {
+      background-color: hsl(240, 100%, 50%);
+    }
+  
+    100% {
+      background-color: rgb(165, 161, 161);
+    }
+  }
+
+/* container for all divs */
+.container{
+    position: relative;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    overflow: hidden;
+    background-size: 100vw;
+}
+
+/*div surrounding myDescription, myDescription2, doggo, and button-container */
+.myInfo{
+    align-content: center;
+    padding: 20px;
+}
+
+/*"Hi, I'm Jordan Mahsman */
+.myDescription{
+
+    font-family: system-ui;
+    font-size: xx-large;
+    font-weight: 700;
+    color: white;
+    line-height: 5vh;
+    margin-bottom: 10px;
+
+}
+
+/*I'm a software engineer who likes.... */
+.myDescription2{
+    font-family: system-ui;
+    font-size: medium;
+    font-weight: 300;
+    color: white;
+}
+
+/*doggo image. self explanatory :) */
+.doggo{
+    width: 400px;
+    margin-bottom: 5vh;
+    border-top-left-radius: 50% 50%;
+    border-top-right-radius: 50% 50%;
+    border-bottom-right-radius: 50% 50%;
+    border-bottom-left-radius: 50% 50%;
+    box-shadow: 0 0 25px rgba(255, 255, 255, 0.8);
+}
+
+/* buttons/links */
+.button-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+@keyframes myInfo {
+    0%{
+    opacity: 0;
+    }
+}
