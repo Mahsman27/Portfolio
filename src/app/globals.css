@@ -15,9 +15,65 @@
 body {
   background: var(--background);
   color: var(--foreground);
+  animation: tonal-shift 14s ease-in-out infinite alternate;
+}
+
+body::before {
+  position: fixed;
+  z-index: 0;
+  inset: -50%;
+  pointer-events: none;
+  content: "";
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='.8'/%3E%3C/svg%3E");
+  opacity: 0.045;
+  animation: grain 0.7s steps(2) infinite;
+}
+
+a:focus-visible {
+  outline: 1px solid var(--foreground);
+  outline-offset: 6px;
 }
 
 ::selection {
   background: var(--foreground);
   color: var(--background);
+}
+
+@keyframes tonal-shift {
+  from {
+    background-color: #000000;
+  }
+
+  to {
+    background-color: #090909;
+  }
+}
+
+@keyframes grain {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+
+  25% {
+    transform: translate3d(3%, -2%, 0);
+  }
+
+  50% {
+    transform: translate3d(-2%, 3%, 0);
+  }
+
+  75% {
+    transform: translate3d(2%, 4%, 0);
+  }
+
+  100% {
+    transform: translate3d(-4%, -3%, 0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body,
+  body::before {
+    animation: none;
+  }
 }

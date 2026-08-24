@@ -18,7 +18,7 @@ const socialLinks = [
 
 export default function Home() {
   return (
-    <main className="flex min-h-svh flex-col px-5 py-5 sm:px-8 sm:py-7 lg:px-10 lg:py-8">
+    <main className="relative z-10 flex min-h-svh flex-col px-5 py-5 sm:px-8 sm:py-7 lg:px-10 lg:py-8">
       <header className="flex items-center justify-between border-t border-white/40 pt-3 font-mono text-[0.625rem] uppercase tracking-[0.2em] sm:text-xs">
         <p>Jordan Mahsman / Portfolio</p>
         <p aria-label="Year 2026">2026</p>
@@ -45,13 +45,19 @@ export default function Home() {
                   href={link.href}
                   target="_blank"
                   rel="noreferrer"
+                  aria-label={`${link.label}: ${link.handle} (opens in a new tab)`}
                   className="group grid grid-cols-[5.5rem_1fr_auto] items-center gap-3 py-3 font-mono text-xs uppercase tracking-[0.12em] sm:grid-cols-[7rem_1fr_auto] sm:text-sm"
                 >
                   <span>{link.label}</span>
                   <span className="text-white/55 transition-colors group-hover:text-white">
                     {link.handle}
                   </span>
-                  <span aria-hidden="true">&nearr;</span>
+                  <span
+                    aria-hidden="true"
+                    className="transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
+                  >
+                    &nearr;
+                  </span>
                 </a>
               </li>
             ))}
