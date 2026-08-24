@@ -46,7 +46,7 @@ export default function Home() {
                   target="_blank"
                   rel="noreferrer"
                   aria-label={`${link.label}: ${link.handle} (opens in a new tab)`}
-                  className="group grid grid-cols-[5.5rem_1fr_auto] items-center gap-3 py-3 font-mono text-xs uppercase tracking-[0.12em] sm:grid-cols-[7rem_1fr_auto] sm:text-sm"
+                  className="group grid grid-cols-[5.5rem_1fr_auto] items-center gap-3 px-3 py-3 font-mono text-xs uppercase tracking-[0.12em] sm:grid-cols-[7rem_1fr_auto] sm:px-4 sm:text-sm lg:px-6"
                 >
                   <span>{link.label}</span>
                   <span className="text-white/55 transition-colors group-hover:text-white">
@@ -56,7 +56,7 @@ export default function Home() {
                     aria-hidden="true"
                     className="transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
                   >
-                    &nearr;
+                    {"\u2197"}
                   </span>
                 </a>
               </li>
